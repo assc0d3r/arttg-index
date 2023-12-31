@@ -53,7 +53,7 @@ SHORT_URL_LEN = int(os.getenv("SHORT_URL_LEN", 3))
 authenticated = bool(username and password)
 SESSION_COOKIE_LIFETIME = int(os.getenv("SESSION_COOKIE_LIFETIME") or "60")
 try:
-    SECRET_KEY = os.getenv("SECRET_KEY")
+    SECRET_KEY = os.environ["SECRET_KEY"]
     if len(SECRET_KEY) != 32:
         raise ValueError("SECRET_KEY should be exactly 32 charaters long")
 except (KeyError, ValueError):
