@@ -27,7 +27,7 @@ except (KeyError, ValueError):
     sys.exit(1)
 
 try:
-    index_settings_str = os.getenv("INDEX_SETTINGS").strip()
+    index_settings_str = os.getenv["INDEX_SETTINGS"].strip()
     index_settings = json.loads(index_settings_str)
 except Exception:
     traceback.print_exc()
