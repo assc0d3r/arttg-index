@@ -18,7 +18,7 @@ if not 1 <= port <= 65535:
     sys.exit(1)
 
 try:
-    api_id = int(os.getenv("API_ID"))
+    api_id = os.getenv("API_ID")
     api_hash = os.getenv("API_HASH")
 except (KeyError, ValueError):
     traceback.print_exc()
